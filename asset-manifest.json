@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/russian_language_lesson/static/css/main.f5d63b0f.css",
-    "main.js": "/russian_language_lesson/static/js/main.7eb115f2.js",
+    "main.js": "/russian_language_lesson/static/js/main.148ec10f.js",
     "index.html": "/russian_language_lesson/index.html",
     "main.f5d63b0f.css.map": "/russian_language_lesson/static/css/main.f5d63b0f.css.map",
-    "main.7eb115f2.js.map": "/russian_language_lesson/static/js/main.7eb115f2.js.map"
+    "main.148ec10f.js.map": "/russian_language_lesson/static/js/main.148ec10f.js.map"
   },
   "entrypoints": [
     "static/css/main.f5d63b0f.css",
-    "static/js/main.7eb115f2.js"
+    "static/js/main.148ec10f.js"
   ]
 }
