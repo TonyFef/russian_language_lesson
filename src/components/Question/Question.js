@@ -8,41 +8,33 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 
-export function Question({ questions, setCurrentQuestionIndex }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [currentQuestion, setCurrentQuestion] = useState("questions");
-  console.log(currentQuestion);
+export function Question({
+  questions,
+  path,
+  setPath,
+  currentQuestion,
+  setCurrentQuestion,
+}) {
   const questionActual =
     currentQuestion === "questions" ? questions : currentQuestion;
+
+    console.log({currentQuestion, questions})
 
   function onFormControlLabelClick(e) {
     const { target } = e;
     const { value } = target;
-    console.log(value, questionActual);
+    console.log(value, questionActual, path);
     if (questionActual?.question) {
       setCurrentQuestion(questionActual[value]);
+      setPath([...path, value]);
     } else {
-      console.log(questionActual);
+      // console.log(questionActual);
     }
-    // const correctAnswer = questions[currentIndex].correctAnswer;
-    // if (e.target.value === correctAnswer) {
-    //   alert("Правильно!");
-    //   setCurrentIndex(currentIndex + 1);
-    //   setCurrentQuestionIndex(currentIndex + 2);
-    // } else {
-    //   alert("Неправильно!");
-    // }
   }
 
   return (
     <div className="Quesion">
       <Typography>{questionActual?.question}</Typography>
-      {/* {questionActual.map(({ question, options }, index) => (
-        <div
-          key={`${question}${Math.random()}`}
-          className={index === currentIndex ? "show" : "hide"}
-        >
-          <Typography>{question}</Typography> */}
       <FormControl>
         <RadioGroup
           aria-labelledby="demo-radio-buttons-group-label"
@@ -64,8 +56,6 @@ export function Question({ questions, setCurrentQuestionIndex }) {
           )}
         </RadioGroup>
       </FormControl>
-      {/* //   </div> */}
-      {/* // ))} */}
     </div>
   );
 }
